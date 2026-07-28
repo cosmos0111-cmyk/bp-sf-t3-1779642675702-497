@@ -387,55 +387,78 @@
         </div>
     </header>
 
-    <!-- 모바일 네비게이션 -->
-    <div class="mobile-nav" id="mobileNav">
-        <button class="close-menu" id="closeMenu">×</button>
-        <a href="/">홈</a>
-        <a href="/about">서비스</a>
-        <a href="/blog">블로그</a>
-        <a href="/contact">문의</a>
-    </div>
+<main>
+<div class="container">
+<h1 class="page-title">마포 네트워크 보안 Aegis Warmer 블로그</h1>
+<p class="post-meta">주제 · 네트워크 보안 기초 정리</p>
 
-    <!-- 메인 콘텐츠 -->
-    <main>
-        <div class="container">
-            <h1 class="page-title">데이터로 증명: 백링크 자동화 3X 트래픽 증가 사례</h1>
+<article class="post-content">
+<p>백링크 자동화 프로그램처럼 반복적으로 다수의 요청을 발생시키는 도구를 운용하는 환경에서는, 네트워크 보안의 기본 개념을 먼저 정리해 두는 것이 안전한 운영의 출발점이 됩니다. 이 글에서는 네트워크 보안의 핵심 요소와 점검 항목을 개념 위주로 정리합니다.</p>
 
-            <div class="post-meta">
-                <span>작성일: 2025-02-18</span>
-                <span>카테고리: 사례 분석</span>
-                <span>읽기 시간: 7분</span>
-            </div>
+<h2>네트워크 보안의 기본 축</h2>
+<p>네트워크 보안은 크게 접근 통제, 트래픽 검사, 암호화라는 세 가지 축으로 나눠 볼 수 있습니다.</p>
+<ul>
+<li>접근 통제: 방화벽과 인증을 통해 허용된 주체만 자원에 접근하도록 제한하는 영역입니다.</li>
+<li>트래픽 검사: 침입 탐지·차단 시스템으로 비정상 트래픽 패턴을 식별하는 영역입니다.</li>
+<li>암호화: 전송 구간과 저장 데이터를 암호화해 가로채기와 유출 피해를 줄이는 영역입니다.</li>
+</ul>
 
-            <article class="post-content">
-                <p><strong>Aegis Warmer</strong>는 마포 네트워크 보안 기반의 백링크 자동화 프로그램입니다. 본 블로그 게시물에서는 2024년 10월부터 2025년 1월까지 진행된 90일 통제 실험의 결과를 공개합니다. 실험은 마포 지역 12개 중소 규모 웹사이트를 대상으로 A/B 테스트 방식으로 진행되었습니다.</p>
+<div class="divider"></div>
 
-                <p>실험군(6개 사이트)은 Aegis Warmer를 통해 자동 백링크를 구축하였고, 대조군(6개 사이트)은 기존 수동 링크 빌딩을 유지했습니다. 모든 사이트는 동일한 산업군(네트워크 보안, IT 컨설팅)에서 선정되었으며, 초기 도메인 레이팅(DR)은 10~18로 통제되었습니다.</p>
+<h2>구성 요소 비교</h2>
+<div class="data-card">
+<p class="label">방화벽</p>
+<p>미리 정의한 규칙에 따라 특정 포트, 프로토콜, 출발지의 트래픽을 허용하거나 차단하는 장비 또는 소프트웨어입니다.</p>
+</div>
+<div class="data-card">
+<p class="label">VPN</p>
+<p>공용 네트워크 구간에 암호화된 터널을 만들어 내부망 수준의 통신 보안을 제공하는 방식입니다.</p>
+</div>
+<div class="data-card">
+<p class="label">침입 탐지 시스템</p>
+<p>알려진 공격 패턴이나 비정상 행위를 실시간으로 감지해 관리자에게 알리는 시스템입니다.</p>
+</div>
+<div class="data-card">
+<p class="label"><span class="stat">핵심</span> Zero Trust</p>
+<p>내부망이라도 기본적으로 신뢰하지 않고, 모든 접근 요청마다 검증을 요구하는 보안 모델입니다.</p>
+</div>
 
-                <h2>주요 결과 요약</h2>
+<div class="divider"></div>
 
-                <div class="data-card">
-                    <span class="stat">+298%</span>
-                    <span class="label">유기 트래픽 증가 (실험군 평균)</span>
-                </div>
+<h2>자동화 도구 운용 시 함께 점검할 항목</h2>
+<p>반복 요청을 발생시키는 자동화 프로그램을 사용할 때는 다음 항목을 함께 점검하는 것이 좋습니다.</p>
+<ul>
+<li>사용하는 IP 또는 프록시가 접근 통제 정책과 충돌하지 않는지 확인한다</li>
+<li>인증 정보가 코드나 로그에 평문으로 남지 않는지 확인한다</li>
+<li>요청 빈도가 대상 서버의 임계치를 넘지 않는지 확인한다</li>
+<li>비정상 응답이 발생했을 때 자동으로 중단되는 안전장치가 있는지 확인한다</li>
+</ul>
 
-                <div class="data-card">
-                    <span class="stat">DR 14 → 32</span>
-                    <span class="label">도메인 레이팅 상승 (실험군 평균)</span>
-                </div>
+<div class="divider"></div>
 
-                <div class="data-card">
-                    <span class="stat">82%</span>
-                    <span class="label">인덱싱 성공률 (백링크 자동 전송 후 30일 이내)</span>
-                </div>
+<h2>자주 발생하는 설정 실수</h2>
+<ul>
+<li>인증 키를 환경 변수 대신 코드에 직접 적어 두는 경우</li>
+<li>테스트 환경에서 쓰던 넓은 허용 범위를 운영 환경까지 그대로 적용하는 경우</li>
+<li>로그에 요청 본문 전체를 남겨 인증 정보가 함께 기록되는 경우</li>
+</ul>
 
-                <p>실험군에서는 <strong>평균 298%</strong>의 유기 트래픽 증가가 관측되었습니다. 대조군은 같은 기간 평균 12% 증가에 그쳤습니다. 가장 높은 성과를 보인 사이트는 마포 소재 보안 컨설팅 업체로, 트래픽이 <strong>412%</strong> 증가했습니다. 이러한 차이는 통계적으로 유의미합니다(p &lt; 0.01, t-검정).</p>
+<section class="faq-section">
+<h2>자주 묻는 질문</h2>
+<div class="faq-item">
+<p class="faq-question">방화벽만 있으면 충분한가요</p>
+<p class="faq-answer">방화벽은 접근 통제의 한 축일 뿐이며, 트래픽 검사와 암호화를 함께 갖춰야 전체적인 보안 수준을 갖췄다고 볼 수 있습니다.</p>
+</div>
+<div class="faq-item">
+<p class="faq-question">Zero Trust는 VPN을 대체하나요</p>
+<p class="faq-answer">둘은 대체 관계라기보다 함께 적용되는 경우가 많으며, VPN이 통신 구간을 보호한다면 Zero Trust는 접근 시점마다 검증을 추가하는 개념입니다.</p>
+</div>
+</section>
 
-                <h2>방법론</h2>
-                <p>각 사이트에 대해 동일한 수의 백링크(주당 50개)를 목표로 설정했습니다. 실험군은 Aegis Warmer의 알고리즘이 자동으로 관련성 높은 사이트를 식별하고 백링크를 생성했습니다. 대조군은 전통적인 게스트 포스트와 디렉토리 제출 방식을 사용했습니다.</p>
+</article>
+</div>
+</main>
 
-                <h3>백링크 품질 지표</h3>
-                <ul>
-                    <li>실험군
+
 </body>
 </html>

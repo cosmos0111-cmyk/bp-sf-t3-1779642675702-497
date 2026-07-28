@@ -388,76 +388,81 @@
         </div>
     </header>
 
-    <!-- 모바일 네비게이션 -->
-    <div class="mobile-nav" id="mobileNav">
-        <button class="close-menu" id="closeMenu">×</button>
-        <a href="/">홈</a>
-        <a href="/about">서비스</a>
-        <a href="/blog">블로그</a>
-        <a href="/contact">문의</a>
-    </div>
+<main>
+<div class="container">
+<h1 class="page-title">마포 네트워크 보안 Aegis Warmer</h1>
+<p>백링크 자동화 프로그램처럼 다수의 요청을 반복적으로 발생시키는 도구를 운용할 때는, 네트워크 보안을 하나의 절차로 이해하고 순서대로 점검하는 방식이 효과적입니다. 이 페이지는 그 절차를 4단계로 정리합니다.</p>
 
-    <!-- 메인 콘텐츠 -->
-    <main>
-        <div class="container">
-            <h1 class="page-title">데이터로 증명: 백링크 자동화 3X 트래픽 증가 사례</h1>
+<div class="divider"></div>
 
-            <div class="post-meta">
-                <span>작성일: 2025-02-18</span>
-                <span>카테고리: 사례 분석</span>
-                <span>읽기 시간: 7분</span>
-            </div>
+<h2>보안 점검 4단계</h2>
+<div class="data-card">
+<p class="label">1단계 · 진단</p>
+<p>현재 네트워크 구성과 노출된 지점을 파악하는 단계입니다. 사용 중인 포트, 외부 연동 지점, 인증 방식을 목록으로 정리합니다.</p>
+</div>
+<div class="data-card">
+<p class="label">2단계 · 정책 수립</p>
+<p>진단 결과를 바탕으로 접근을 허용할 대상과 차단할 대상을 정의하고, 예외 처리 기준을 문서화합니다.</p>
+</div>
+<div class="data-card">
+<p class="label">3단계 · 적용</p>
+<p>방화벽 규칙, 암호화 설정, 인증 절차를 실제 환경에 반영합니다. 적용 순서와 롤백 방법을 함께 정리해 둡니다.</p>
+</div>
+<div class="data-card">
+<p class="label">4단계 · 모니터링</p>
+<p>적용 이후에도 로그와 트래픽 패턴을 지속적으로 관찰해 새로운 위협이나 정책 예외를 조기에 발견합니다.</p>
+</div>
 
-            <article class="post-content">
-                <p><strong>Aegis Warmer</strong>는 마포 네트워크 보안 기반의 백링크 자동화 프로그램입니다. 본 블로그 게시물에서는 2024년 10월부터 2025년 1월까지 진행된 90일 통제 실험의 결과를 공개합니다. 실험은 마포 지역 12개 중소 규모 웹사이트를 대상으로 A/B 테스트 방식으로 진행되었습니다.</p>
+<div class="divider"></div>
 
-                <p>실험군(6개 사이트)은 Aegis Warmer를 통해 자동 백링크를 구축하였고, 대조군(6개 사이트)은 기존 수동 링크 빌딩을 유지했습니다. 모든 사이트는 동일한 산업군(네트워크 보안, IT 컨설팅)에서 선정되었으며, 초기 도메인 레이팅(DR)은 10~18로 통제되었습니다.</p>
+<h2>운영 환경에서 흔히 나타나는 위험 신호</h2>
+<p>아래 항목은 절대적인 기준이 아니라, 추가 점검이 필요하다는 신호로 참고할 수 있는 목록입니다.</p>
+<ul>
+<li>동일 계정에서 짧은 시간에 반복적으로 인증 실패가 발생하는 경우</li>
+<li>평소와 다른 지역대의 접속 시도가 갑자기 늘어나는 경우</li>
+<li>내부 시스템에서 외부로 나가는 트래픽 양이 평소 패턴과 크게 달라지는 경우</li>
+<li>사용하지 않는 포트에서 지속적인 접근 시도가 기록되는 경우</li>
+</ul>
 
-                <h2>주요 결과 요약</h2>
+<div class="divider"></div>
 
-                <div class="data-card">
-                    <span class="stat">+298%</span>
-                    <span class="label">유기 트래픽 증가 (실험군 평균)</span>
-                </div>
+<h2>용어 정리</h2>
+<dl>
+<dt class="label">방화벽</dt>
+<dd>정의된 규칙에 따라 특정 트래픽을 허용하거나 차단하는 접근 통제 장치입니다.</dd>
+<dt class="label">침입 탐지</dt>
+<dd>알려진 공격 패턴이나 비정상 행위를 실시간으로 감지해 알리는 기능입니다.</dd>
+<dt class="label">Zero Trust</dt>
+<dd>내부망이라도 기본적으로 신뢰하지 않고, 모든 접근 요청마다 검증을 요구하는 보안 모델입니다.</dd>
+<dt class="label">감사 로그</dt>
+<dd>누가 언제 어떤 자원에 접근했는지 기록해 사후 점검과 원인 분석에 활용하는 기록입니다.</dd>
+</dl>
 
-                <div class="data-card">
-                    <span class="stat">DR 14 → 32</span>
-                    <span class="label">도메인 레이팅 상승 (실험군 평균)</span>
-                </div>
+<div class="divider"></div>
 
-                <div class="data-card">
-                    <span class="stat">82%</span>
-                    <span class="label">인덱싱 성공률 (백링크 자동 전송 후 30일 이내)</span>
-                </div>
-
-                <p>실험군에서는 <strong>평균 298%</strong>의 유기 트래픽 증가가 관측되었습니다. 대조군은 같은 기간 평균 12% 증가에 그쳤습니다. 가장 높은 성과를 보인 사이트는 마포 소재 보안 컨설팅 업체로, 트래픽이 <strong>412%</strong> 증가했습니다. 이러한 차이는 통계적으로 유의미합니다(p &lt; 0.01, t-검정).</p>
-
-                <h2>방법론</h2>
-                <p>각 사이트에 대해 동일한 수의 백링크(주당 50개)를 목표로 설정했습니다. 실험군은 Aegis Warmer의 알고리즘이 자동으로 관련성 높은 사이트를 식별하고 백링크를 생성했습니다. 대조군은 전통적인 게스트 포스트와 디렉토리 제출 방식을 사용했습니다.</p>
-
-                <h3>백링크 품질 지표</h3>
-                <ul>
-                    <li>실험군
-
-<!-- PBN Recent Posts Feed Section -->
-<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
-  <div style="max-width:1100px;margin:0 auto">
-    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-      
-    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
-      <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
-          <span>⭐ REVIEW</span>
-          <time datetime="2026-06-10">2026-06-10</time>
-        </div>
-        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">백링크 자동화 프로그램에 관한 흔한 오해, 직접 확인해보니 달랐던 점</h4>
-        <h3>포스트 DNA d537f72c #### 제목: 창작한 제목 아, 진짜... MK울트라 프로젝트의 1972년 의회 청문회에서 공개되지 않은 서브프로젝트 3건의 실제 코드명과 목적을 알아내려면 무엇이 필요한지. #### 구조 및 근거 방식 실제 기밀해제와 음모론 팩</h3>
-      </div>
-      <a href="posts/myth-002-diwyq7.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
-    </article>
-    </div>
-  </div>
+<section class="faq-section">
+<h2>질문과 답변</h2>
+<div class="faq-item">
+<p class="faq-question">보안 점검은 얼마나 자주 해야 하나요</p>
+<p class="faq-answer">고정된 주기보다는 배포, 구성 변경, 트래픽 급증처럼 환경이 바뀌는 시점마다 점검하는 것이 일반적으로 권장됩니다.</p>
+</div>
+<div class="faq-item">
+<p class="faq-question">자동화 도구를 쓰면 보안 위험이 더 커지나요</p>
+<p class="faq-answer">도구 자체보다는 인증 정보 관리와 요청 빈도 제어가 미흡할 때 위험이 커지므로, 도구 사용 여부보다 운영 방식을 점검하는 것이 더 중요합니다.</p>
+</div>
+<div class="faq-item">
+<p class="faq-question">4단계 절차를 꼭 순서대로 따라야 하나요</p>
+<p class="faq-answer">진단 없이 정책부터 세우면 실제 위험을 놓칠 수 있으므로, 순서를 크게 벗어나지 않는 범위에서 반복적으로 단계를 순환하는 방식이 흔히 사용됩니다.</p>
+</div>
+<div class="faq-item">
+<p class="faq-question">진단 단계에서는 무엇부터 살펴봐야 하나요</p>
+<p class="faq-answer">외부에 노출된 포트와 서비스 목록을 먼저 정리한 뒤, 각 접점에 어떤 인증과 암호화가 적용되어 있는지 확인하는 순서가 일반적입니다.</p>
+</div>
 </section>
+
+</div>
+</main>
+
+
 </body>
 </html>
